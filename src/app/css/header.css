@@ -17,7 +17,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 13.5px 10px;
+    padding: 0px 10px;
     gap: 82px;
     width: 100%
 }
@@ -30,7 +30,6 @@ body {
 }
 
 .navigation .menu a {
-    font-family: Gotham-book;
     color: #000;
     font-size: 16px;
     text-decoration: none
@@ -59,7 +58,6 @@ body {
     top: 0;
     left: 50%;
     margin: 0;
-    padding: 18px
 }
 
 .navigation .sub-menu a {
@@ -71,21 +69,6 @@ body {
     z-index: 99;
     opacity: 1;
     top: 70px
-}
-
-.header .cta {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    text-decoration: none;
-    background: #c60d12;
-    gap: 8px;
-    padding: 7px 13px;
-    border-radius: 43px;
-    font-family: Gotham;
-    font-size: 18px;
-    font-weight: 700
 }
 
 @media (max-width:1370px) {
@@ -148,7 +131,6 @@ body.sidebar-open {
 .mobile-navigation a {
     display: flex;
     justify-content: space-between;
-    font-family: Gotham-book;
     color: #000
 }
 
@@ -161,10 +143,12 @@ body.sidebar-open {
 .mobile-navigation .is-parent .show-sub {
     display: block;
     padding-top: 10px;
-    font-size: 14px;
+    font-size: 16px;
     padding-left: 20px
 }
-
+.mobile-navigation .is-parent  li{
+    padding-bottom:6px;
+}
 .mobile-navigation>ul>li {
     margin-bottom: 10px
 }
@@ -178,7 +162,7 @@ body.sidebar-open {
     border: 1px solid #757575;
     border-radius: 50%;
     justify-content: center;
-    line-height: 30px;
+    line-height: 35px;
     position: absolute;
     top: 20px;
     right: 20px;
@@ -201,23 +185,4 @@ body.sidebar-open {
 }
 .navigation .is-parent{
   position:relative;
-}
-
-
-.preloader {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    animation: .5s infinite pulse
-}
-
-@keyframes pulse {
-    0%,
-    100% {
-        transform: scale(.95)
-    }
-    70% {
-        transform: scale(1)
-    }
 }

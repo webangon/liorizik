@@ -19,29 +19,29 @@ export default function Header() {
             className="mx-auto mt-2"
             src="/img/logo.png"
             alt="Better Stack"
-            width={236}
-            height={58}
+            width={203}
+            height={62}
           />
             </Link>
           <nav className='navigation'>
             <ul className="menu">
-                <li><Link href={`${process.env.LIOR_SITE}`}>Home</Link>
-                </li>         
-                <li><Link href="/page/product-detail/">Product Detail</Link>
-                </li>   
-                <li><Link href="/page/pdf-download/">PDF Download</Link>
-                </li>                    
-                <li className="is-parent"><a href="#">Brands</a>
+                <li><Link href={`${process.env.LIOR_SITE}`}><Image src="/img/homeIcon.webp" alt="Better Stack" width={36} height={34} />Home</Link>
+                </li>                            
+                <li className="is-parent"><a href="#"><Image src="/img/courseIcon.svg" alt="Better Stack" width={36} height={34} />Courses</a>
                     <ul className="sub-menu">
-                    <li><Link href="/page/open-path-brand/">Open Path</Link></li> 
-                    <li><Link href="/page/butterflymx-brand/">Butterfly MX</Link></li> 
-                    <li><Link href="/page/ict-brand/">ICT</Link></li> 
+                    <li><Link href="/page/all-courses-bundle/"><Image src="/img/bundleicon.png" alt="Better Stack" width={36} height={34} />All Courses Bundle</Link></li> 
+                    <li><Link href="/page/deluge-scripting-for-zoho-crm/"><Image src="/img/deluge.png" alt="Better Stack" width={36} height={34} />Deluge Scripting For Zoho CRM</Link></li> 
+                    <li><Link href="/page/zoho-crm-training-program-v2-0/"><Image src="/img/zohocrm.png" alt="Better Stack" width={36} height={34} />Zoho CRM Training Program – V2.0</Link></li>
+                    <li><Link href="/page/the-complete-zoho-forms-course/"><Image src="/img/zohoform.png" alt="Better Stack" width={36} height={34} />The Complete ZOHO Forms Course</Link></li> 
+                    <li><Link href="/page/sending-drip-marketing-using-zoho-crm/"><Image src="/img/drip-marketing.png" alt="Better Stack" width={36} height={34} />Sending Drip Marketing Using Zoho CRM</Link></li>
+                    <li><Link href="/page/learn-how-to-generate-100s-of-good-online-reviews/"><Image src="/img/online-review.png" alt="Better Stack" width={36} height={34} />Learn How To Generate 100s of Good Online Reviews</Link></li> 
+                    <li><Link href="/page/employee-training/"><Image src="/img/training.png" alt="Better Stack" width={36} height={34} />Employee Training</Link></li> 
+                    <li><Link href="/page/offshore-freelancers-targeting-north-america-clients/"><Image src="/img/offsore.png" alt="Better Stack" width={36} height={34} />Offshore Freelancers targeting North America clients</Link></li> 
                     </ul>
                 </li>                                             
             </ul>
           </nav>
-          <Link className='cta' href="/"><Image src="/img/user.png" alt="Better Stack" width={29} height={28}/>Contact our Team</Link>
-          <Image className="chip" src="/img/chip.png" alt="Better Stack" width={88} height={90}/>
+          <Link className='cta' href="https://edu.liorizik.com/users/sign_in">Sign In</Link>
           <Image data-toggle-sidebar="sidebar1" className="mobile-tap" src="/img/mobile-tap.png" alt="Better Stack" width={50} height={50}/>
         </div>    
         <Sidebar/>    

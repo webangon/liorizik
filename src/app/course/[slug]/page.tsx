@@ -1,9 +1,10 @@
 import { Metadata } from 'next'
 import { Suspense } from "react";
-import Loading from "../.././loading";
- 
+import Footer from '../.././components/Footer'
+import Header from '../.././components/Header'
+
 export const metadata: Metadata = {
-  title: 'About',
+    title: 'Courses',
 }
 
 export default async function Page({ params }: {
@@ -12,14 +13,13 @@ export default async function Page({ params }: {
 
     const query = `
     query {
-        postBy(slug: "${params.slug}") {
-            title
+        course(id: "${params.slug}", idType: SLUG) {
             content
-        }   
+        }
     }    
     `;
 
-    const res = await fetch('https://webangon.com/nextwp/graphql', {
+    const res = await fetch(process.env.LIOR_GRAPHQL!, {
         method: "POST",
         cache: 'no-store',
         headers: {
@@ -38,14 +38,12 @@ export default async function Page({ params }: {
             return data;
         }
     )
-    const xyz = res.data.postBy.content;
-
-    return(
+    const xyz = res.data.course.content;
+    return ( 
         <>
-        <Suspense fallback={<Loading />}>
-        <h1>{res.data.postBy.title}</h1>
-        <div dangerouslySetInnerHTML={{__html: xyz}}></div>
-        </Suspense>
+            <Header />
+            <div dangerouslySetInnerHTML={{__html: xyz}}></div>  
+            <Footer/> 
         </>
-    ) 
+    )
 }

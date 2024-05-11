@@ -2,75 +2,23 @@ var lightboxVideo = GLightbox({
     selector: '.glightbox3'
 });
 
-var video_slide = document.querySelector('#uts-video-carousel')
+var video_slide = document.querySelector('#course-carousel')
 
 if (video_slide != null) {
-    var sd = new Splide('#uts-video-carousel', {
-        perPage: 3,
-        breakpoints: {
-          640: {
-            perPage: 1,
-          },
-        },
-        classes: {
-          arrows: 'splide__arrows',
-          arrow: 'splide__arrow_vid',
-          prev: 'splide__arrow--prev',
-          next: 'splide__arrow--next',
-        },
-      }).mount(); 
-} 
-
-var sync_slide = document.querySelector('#uts-sync-carousel')
-
-if (sync_slide != null) {
-
-    var main = new Splide( '#main-slider', {
-    type      : 'fade',
-    rewind    : true,
-    pagination: false,
-    arrows    : false,
-  } );
-
-  var thumbnails = new Splide( '#uts-sync-carousel', {
+  new Splide( '#course-carousel', {
+    perPage    : 5,
     gap         : 30,
-    rewind      : true,
     pagination  : false,
-    perPage    : 4,
-    isNavigation: true,
-    breakpoints : {
-      600: {
-        perPage: 2,
-      },
-    },
-  } );
-
-  main.sync( thumbnails );
-  main.mount();
-  thumbnails.mount();
-
-}
-
-var portfolio_carousel = document.querySelector('#uts-portfolio-carousel')
-
-if (portfolio_carousel != null) {
-
-      new Splide( '#uts-portfolio-carousel', {
-    perPage    : 4,
     breakpoints: {
+        1024: {
+            perPage: 2,
+        },                    
         640: {
             perPage: 1,
         },
     },
-    classes: {
-            arrows: 'splide__arrows',
-            arrow : 'splide__arrow_vid',
-            prev  : 'splide__arrow--prev',
-            next  : 'splide__arrow--next',
-    },        
 } ).mount();
-
-}
+} 
 
 
 document.body.classList.remove('sidebar-open')
@@ -96,5 +44,17 @@ mobile_expand.forEach((item, index) => {
     }
 
 })
+
+var has_more = document.querySelector('.showMore')
+
+if (has_more != null) {
+    var course_expand = document.querySelector('.criclmLft')
+    document.querySelector('.showMore').onclick = function () {
+        course_expand.classList.toggle('show')
+    }
+}
+
+
+
 
 

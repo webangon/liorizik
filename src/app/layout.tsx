@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Providers from './components/ProgressBarProvider'
+import { PagesProgressBar as ProgressBar } from 'next-nprogress-bar';
 export const metadata: Metadata = {
   title: "App Name",
   description: "App Description",
@@ -9,6 +11,7 @@ export const metadata: Metadata = {
   },   
 }
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -17,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning={true}>
-        {children}
+        <Providers>{children}</Providers>
         </body>
     </html>
   );
