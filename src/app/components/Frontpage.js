@@ -15,31 +15,31 @@ export default async function Frontpage() {
     method: "POST",
     cache: 'no-store',
     headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Accept": "application/json",
     },
     body: JSON.stringify({
-        query
+      query
     })
-}).then(
+  }).then(
     response => {
-        return response.json();
+      return response.json();
     }
-).then(
+  ).then(
     data => {
-        return data;
+      return data;
     }
-)
-const xyz = res.data.pages.nodes;
+  )
+  const xyz = res.data.pages.nodes;
 
   return (
     <>
       {xyz.map((item) => {
         const content = item.content;
-        return(
-            <>
-          <div dangerouslySetInnerHTML={{__html: content}}></div>            
-            </>
+        return (
+          <>
+            <div dangerouslySetInnerHTML={{ __html: content }}></div>
+          </>
         );
       })}
     </>

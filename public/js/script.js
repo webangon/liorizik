@@ -54,6 +54,17 @@ if (has_more != null) {
     }
 }
 
+var has_btn_more = document.querySelector('.show-more-course')
+
+if (has_btn_more != null) {
+    var course_show = document.querySelector('.courseMid')
+    document.querySelector('.show-more-course').onclick = function (e) {
+        e.preventDefault()
+        course_show.classList.toggle('show')
+    }
+}
+
+
 
 
 
