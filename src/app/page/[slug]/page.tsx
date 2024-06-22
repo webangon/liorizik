@@ -1,9 +1,24 @@
 import { Metadata } from 'next'
 import Footer from '../.././components/Footer'
 import Header from '../.././components/Header'
+import axios from 'axios';
 
-export const metadata: Metadata = {
-    title: 'Courses',
+export async function generateMetadata({ params }: {
+    params: { slug: string };
+}) {
+    const metadata = await axios.get(`${process.env.LIOR_WPSITE}/wp-json/wp/v2/uts_seo_data`,
+        { params: { type: 'page',slug:'page/'+params.slug } }
+    )
+    //console.log(metadata.data);
+    return {
+        title: metadata.data.title,
+        description:metadata.data.description,
+        keywords:metadata.data.focus,
+        robots: {
+            index: metadata.data.robot_index,
+            follow: metadata.data.robot_follow,
+        },        
+    }
 }
 
 export default async function Page({ params }: {
@@ -21,7 +36,7 @@ export default async function Page({ params }: {
     }    
     `;
 
-    const res = await fetch(process.env.LIOR_GRAPHQL!, {
+    const res = await fetch(`${process.env.LIOR_WPSITE}/graphql`, {
         method: "POST",
         cache: 'no-store',
         headers: {
